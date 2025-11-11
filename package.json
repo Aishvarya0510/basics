@@ -1,0 +1,17 @@
+{
+  "name": "namaste-react-live",
+  "version": "1.0.0",
+  "description": "This is a live course",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "react-basic-app"
+  },
+  "license": "ISC",
+  "author": "Aishvarya",
+  "type": "commonjs",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
