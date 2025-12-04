@@ -83,13 +83,7 @@ try how to use image src inside JSX
    -> functional based
 
 */
-//React Element:
 
-const Heading = () => (
-  <h1 className="head" tabIndex="5">
-    Nameste React
-  </h1>
-);
 //React functional component => a normal javascript  function that returns JSX element /  react element
 
 const HeadingComponent = () => <h1>Namaste React Functional Component</h1>;
@@ -186,3 +180,46 @@ Logic is separate
 
 Everything works
 */
+/* -------------------------------------------------------------------------- */
+
+/*
+  Any javascript expression code inside {}
+
+*/
+//React Element:
+
+const Heading = () =>  (
+  
+  <h1 className="head" tabIndex="5">
+    Nameste React
+  </h1>
+);
+const elem = <span>Yov!! Hiiii</span>
+const HeadingComponent3 = () => (
+  <div id="container">
+    {Heading()}
+    {elem}
+    <h1>hey!!!! Namaste</h1>
+    {console.log("fkdgjdfkgdfkjgfk")}
+  </div>
+);
+
+
+//////////////////////////////////////////////////
+/*
+const data = api.getData();
+If API call is malicious, and we get data and when we use that data inside jsx for eg
+{data.title} or {data.id} -> this is called CORS (cross side scripting)
+[attacker can send some data- run javascript in your browser - can able to steel all info cookies,session,local
+storage etc.. and can able to get any type of information.]
+- nothing will happen-> JSX takes care of these injection attacks and will sanitize (or escape) it.
+IT prevents CORS
+
+*/
+
+/*
+    {Heading()} - this works
+    {<Heading />}
+    {<Heading></Heading>}
+*/
+root.render(<HeadingComponent3/>);
