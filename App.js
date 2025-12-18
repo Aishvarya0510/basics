@@ -28,35 +28,39 @@ parcel - created server, enabled all below
 */
 
 
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
-const heading = React.createElement(
-      "h1",
-      {
-        id: "title",
-        style: { marginLeft: "10px" },
-        className: "div-wrap",
-      },
-      "Heading 1"
-    );
+//React.createElement => Object => HTMLElement(render)
 
-    const heading2 = React.createElement(
-      "h2",
-      {
-        id: "title2",
- 
-      },
-      "Heading 2"
-    );
-    const container = React.createElement(
-      "div",
-      {
-        id: "container",
-      },
-      [heading, heading2]
-    );
+// const heading = React.createElement(
+//   "h1",
+//   { id: "heading"},
+//  "Nameste React")
 
-    const root = ReactDOM.createRoot(document.getElementById("root"));
+// ----- this is jsx element --> a variable storing value ---- //
+const Heading =  (
+  <h1 className ="head" tabIndex="5">
+      Nameste React using JSX element
+    </h1>
+);
 
-    root.render(container);
+const Heading2 = () => (
+  <h1 className ="head" tabIndex="5">
+      Nameste React using function
+    </h1>
+);
+// ----- this is React Functional Component ---- //
+//A function returns JSX code
+const HeadingComp = () => {
+  return (
+  <div className="container">
+    {Heading}
+     <Heading2/>
+   <h1>Parent Functional COmponent</h1>
+  </div>
+  );
+}
+
+ const root = ReactDOM.createRoot(document.getElementById("root"));
+ root.render(<HeadingComp/>);
